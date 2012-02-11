@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[MeX]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{fullpage}
+
+\newcommand*{\intd}{\mathrm{\textbf{d}}}
+
+\title{Rozwiązania kilku zadań z~pierwszej listy zadań z~Mechaniki Kwantowej}
+\author{Piotr Polesiuk}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\paragraph{Zadanie 2.}
+
+Całkowite natężenie promieniowania (po wszystkich częstościach) można wyraźić 
+całką:
+\[
+\psi(T) = \int\limits_0^\infty \psi(\nu, T) \intd\nu
+\]
+Wstawiając wyrażenie na $\psi(\nu, T)$ z~prawa Plancka:
+\[
+\psi(T) = \int\limits_0^\infty \frac{8\pi\nu^2}{c^2} 
+	\frac{h\nu}{e^\frac{h\nu}{kT} - 1} \intd\nu
+\]
+oraz całkując przez podstawienie:
+\[
+x = \frac{h\nu}{kT}
+\quad
+\nu = \frac{kT}{h}x
+\quad
+\intd\nu = \frac{kT}{h}\intd x
+\]
+otrzymujemy
+\[
+\psi(T) 
+= \int\limits_0^\infty \frac{8\pi k^2 T^2}{c^2 h^2}x^2
+	\frac{kT}{h}\frac{hx}{e^x - 1}\frac{kT}{h}\intd x
+= T^4\frac{8\pi k^4}{c^2 h^3}
+	\int\limits_0^\infty x^3\frac{1}{e^x - 1}\intd x
+\]
+Ta ostania całka przyjmuje stałą wartość, więc nie zależy od temperatury.
+Otrzymaliśmy więc prawo Stefana--Boltzmanna:
+\[
+\psi(T) = \sigma T^4
+\]
+gdzie
+\[
+\sigma = \frac{8\pi k^4}{c^2 h^3}
+	\int\limits_0^\infty x^3\frac{1}{e^x - 1}\intd x
+\]
+
+\end{document}
