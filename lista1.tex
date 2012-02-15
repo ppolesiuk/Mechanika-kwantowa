@@ -5,9 +5,10 @@
 \usepackage{fullpage}
 
 \newcommand*{\intd}{\mathrm{\textbf{d}}}
+\newcommand*{\ut}[1]{\mathrm{#1}}
 
 \title{Rozwiązania kilku zadań z~pierwszej listy zadań z~Mechaniki Kwantowej}
-\author{Piotr Polesiuk}
+\author{Piotr Polesiuk, Bartłomiej Pytko}
 \date{\today}
 
 \begin{document}
@@ -52,5 +53,23 @@ gdzie
 \sigma = \frac{8\pi k^4}{c^2 h^3}
 	\int\limits_0^\infty x^3\frac{1}{e^x - 1}\intd x
 \]
+\paragraph{Zadanie 3.}
+
+Korzystając z~prawa Wiena,
+otrzymujemy długość fali, dla której moc promieniowania jest największa
+
+\[
+\lambda_{max} = \frac{2,9 \cdot 10^{-3}}{T} \ut{m} = 500 \ut{nm}
+\]
+
+Moc promieniowania na jednostkę powierzchi dostaniemy dzięki prawu 
+Stefana-Boltzmanna.
+
+\[
+\psi(T) =\sigma T^4 = 5.67 \cdot 10^{-8} \cdot 5800^4 \frac{\ut{W}}{\ut{m^2}}
+= 6,41 \cdot 10^7 \frac{\ut{W}}{\ut{m^2}}
+\]
+
+
 
 \end{document}
