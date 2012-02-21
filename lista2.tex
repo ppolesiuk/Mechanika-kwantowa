@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage[MeX]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{fullpage}
+
+\title{Rozwiązanie drugiego zadania z drugiej listy z~Mechaniki Kwantowej}
+\author{Piotr Polesiuk, Bartłomiej Pytko}
+\date{\today}
+
+\newcommand*{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand*{\pdd}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
+
+\begin{document}
+
+\maketitle
+
+\paragraph{Zadanie 2, podpunkt (a).}
+
+Nawiasy Poissona definiujemy jako
+\[
+\{F,G\} \equiv \sum_{i=0}^s
+\left(\pd{F}{p_i}\pd{G}{q_i} - \pd{F}{q_i}\pd{G}{p_i}\right)
+\]
+gdzie $s$ to liczba stopni swobody, a~$p_i$ oraz $q_i$ to pędy 
+i~współrzędne uogólnione.
+
+Jako, że przy rozwijaniu definicji zagnieżgdżonych nawiasów Poissona mogą
+pojawiać się bardzo długie wyrażenia ($\{F,\{G,H\}\}$ po rozwinięciu
+ma aż 8 składników postaci $\pd{A}{x}\pd{B}{y}$), wprowadzimy następującą
+notację:
+\[
+x_i^0 \equiv p_i \qquad x_i^1 \equiv p_i
+\]
+Wtedy nawiasy Poissona wyrażają się w~następujący sposób:
+\[
+\{F,G\} = \sum_{i=0}^s\sum_{a=0}^1 (-1)^a \pd{F}{x_i^a}\pd{G}{x_i^{1-a}}
+\]
+a~zatem
+\[
+\{F,\{G,H\}\} = \sum_{i=0}^s\sum_{a=0}^1 (-1)^a \pd{F}{x_i^a}\pd{}{x_i^{1-b}}
+\sum_{j=0}^s\sum_{b=0}^1 (-1)^b \pd{G}{x_j^b}\pd{H}{x_j^{b-1}}
+\]
+\[
+= \sum_{i,j=0}^s\sum_{a,b=0}^1 (-1)^{a+b}
+\pd{F}{x_i^a} \pdd{G}{x_i^{1-a}}{x_j^b} \pd{H}{x_j^{1-b}}
++ \sum_{i,j=0}^s\sum_{a,b=0}^1 (-1)^{a+b}
+\pd{F}{x_i^a} \pd{G}{x_j^b} \pdd{H}{x_i^{1-a}}{x_j^{1-b}}
+\]
+Po przeindeksowaniu w~drugiej sumie i~zamianie kilku czynników miejscami mamy
+\begin{equation}\label{poissonXX}
+\{F, \{G,H\}\}
+= \sum_{i,j=0}^s\sum_{a,b=0}^1 (-1)^{a+b}
+\pd{F}{x_i^a} \pdd{G}{x_i^{1-a}}{x_j^b} \pd{H}{x_j^{1-b}}
+- \sum_{i,j=0}^s\sum_{a,b=0}^1 (-1)^{a+b}
+\pd{F}{x_i^a} \pdd{H}{x_i^{1-a}}{x_j^{b}} \pd{G}{x_j^{1-b}}
+\end{equation}
+Połóżmy
+\[
+X_{FGH} \equiv \sum_{i,j=0}^s\sum_{a,b=0}^1 (-1)^{a+b}
+\pd{F}{x_i^a} \pdd{G}{x_i^{1-a}}{x_j^b} \pd{H}{x_j^{1-b}}
+\]
+Taki obiekt ma następujące własności
+\begin{eqnarray*}
+(i)  && X_{FGH} = X_{HGF} \\
+(ii) && \{F,\{G,H\}\} = X_{FGH} - X_{GHF} \\
+\end{eqnarray*}
+Własność $(i)$ otrzymujemy przez prostą zamianę indeksów,
+a~własność $(ii)$ natychmiast wynika z~rówania~(\ref{poissonXX}) oraz
+własności $(i)$.
+
+Teraz łatwo można udowodnić własność nawiasów Poissona z~zadania:
+\[
+\{F,\{G,H\}\} + \{H,\{F,G\}\} + \{G,\{H,F\}\} =
+X_{FGH} - X_{GHF} + X_{HFG} - X_{FGH} + X_{GHF} - X_{HFG} = 0
+\]
+
+\end{document}
