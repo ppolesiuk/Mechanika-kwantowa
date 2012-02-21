@@ -75,4 +75,44 @@ Teraz łatwo można udowodnić własność nawiasów Poissona z~zadania:
 X_{FGH} - X_{GHF} + X_{HFG} - X_{FGH} + X_{GHF} - X_{HFG} = 0
 \]
 
+\paragraph{Zadanie 2, podpunkt (b).}
+
+Hamiltonian dla oscylatora harmonicznego (w~jednym wymiarze) ma postać
+\[
+H = T + V = \frac{p^2}{2m} + \frac{kx^2}{2}
+\]
+A~więc równania Hamiltona wyglądają następująco
+\begin{eqnarray}
+&& \dot{x} =  \pd{H}{p} = \frac{p}{m} \label{ham1} \\
+&& \dot{p} = -\pd{H}{x} = -kx \label{ham2}
+\end{eqnarray}
+Różniczkując pierwsze równanie (i~zakładając masę stałą w~czasie) 
+otrzymujemy
+\[
+\ddot{x} = \frac{\dot{p}}{m} = -\frac{kx}{m}
+\]
+Jest to równanie różniczkowe jednorodne rzędu drugiego
+\[
+\ddot{x} + \frac{k}{m}x = 0
+\]
+dla którego wielomian charakterystyczny ma postać
+\[
+W(\lambda) = \lambda^2 + \frac{k}{m}
+\]
+zaś jego zera wypadają w~punktach $i\sqrt{\frac{k}{m}}$ oraz 
+$-i\sqrt{\frac{k}{m}}$. Interesują nas tylko rozwiązania rzeczywiste,
+więc ogólne rozwiązanie będzie postaci
+\[
+x(t) = x_0 \cos\left(\omega t\right) + \frac{p_0}{\omega m} \sin\left(\omega t\right)
+\]
+gdzie $\omega = \sqrt{\frac{k}{m}}$, a~$x_0$ oraz ${p_0}$ to pewne stałe.
+
+Różniczkując powyższe równanie i~wstawiając do (\ref{ham1}) otrzymujemy
+\[
+p(t) = p_0 \cos\left(\omega t\right) - \omega m x_0 \sin\left(\omega t\right)
+\]
+
+Łatwo teraz zauważyć, że dla $t=0$ mamy $x=x_0$ i~$p=p_0$, 
+a~więc mamy rozwiązanie dla dowolnych warunków początkowych.
+
 \end{document}
