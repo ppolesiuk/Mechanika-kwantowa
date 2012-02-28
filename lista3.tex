@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[MeX]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{fullpage}
+
+\title{Rozwiązanie drugiego zadania z~trzeciej listy z~Mechaniki Kwantowej}
+\author{Piotr Polesiuk, Bartłomiej Pytko}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+Niech $A\colon\mathbb{C}^n\to \mathbb{C}^n$
+będzie operatorem hermitowskim. Udowodnić następujące twierdzenia
+\begin{enumerate}
+\item
+Jeżeli podprzestrzeń $W\subseteq \mathbb{C}^n$ jest podprzestrzenią
+niezmienniczą operatora $A$ to jej ortogonalne dopełnienie
+$W^\perp$ jest również podprzestrzenią niezmienniczą $A$.
+
+\begin{proof}
+Operator $A$ jest hermitowski, tzn. dla dowolnych wektorów 
+$x,y\in\mathbb{C}^n$ zachodzi 
+\mbox{$\langle{}Ax|y\rangle=\langle{}x|Ay\rangle$}.
+
+Weźmy dowolny wektor $u\in W^\perp$. Z~definicji ortogonalnego dopełnienia 
+spełnia on $\forall w\in W.\langle{}u|w\rangle=0$. Pokażę, że własność ta 
+zachodzi również dla $Au$. W~tym celu weźmy dowolne $w\in W$. Wtedy
+\[
+\langle{}Au|w\rangle = \langle{}u|Aw\rangle = 0
+\]
+Pierwsza równość wynika z~hermitowskości operatora $A$, zaś równość 
+druga wynika z~niezmienniczości podprzestrzeni $W$ ($Aw \in W$) oraz 
+z~definicji ortogonalnego dopełnienia.
+\end{proof}
+
+\item
+Istnieje baza ortonormalna złożona z wektorów własnych operatora $A$.
+
+\item
+Przestrzeń $\mathbb{C}^n$ jest ortogonalną sumą prostą podprzestrzeni własnych
+operatora $A$.
+\end{enumerate}
+
+\end{document}
