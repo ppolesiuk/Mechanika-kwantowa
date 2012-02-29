@@ -69,8 +69,9 @@ Rozważmy działanie operatora $A$ na dowolnym wektorze $v$:
 Av = A\left(\alpha{}w+v'\right) = A\left(\alpha{}w\right) + Av' = 
 \alpha\lambda{}w + A'v'
 \]
-gdzie operator $A'$ to operator $A$ obcięty do podprzestrzeni niezmienniczej
-$\left(\mathbb{C}w\right)^\perp$, a~zatem wartości $A'$ również są z~tego zbioru.
+gdzie operator $A'$ to operator $A$ obcięty do podprzestrzeni
+$\left(\mathbb{C}w\right)^\perp$, wartości $A'$ również są z~tego zbioru
+(z~niezmienniczości dziedziny).
 
 Ale $\dim\left(\mathbb{C}w\right)^\perp = n$, czyli przestrzeń 
 $\left(\mathbb{C}w\right)^\perp$ jest izomorficzna z~przestrzenią $\mathbb{C}^n$,
@@ -88,5 +89,21 @@ złożoną z~wektorów własnych operatora $A$.
 Przestrzeń $\mathbb{C}^n$ jest ortogonalną sumą prostą podprzestrzeni własnych
 operatora $A$.
 \end{enumerate}
+
+\begin{proof}Natychmiast z~poprzedniego twierdzenia. 
+Niech $\left\{v_{\lambda i} | \lambda\in{\rm spec}A | i=1,\ldots,m_\lambda\right\}$,
+gdzie $m_\lambda$ oznacza krotność geometryczną wartości własnej $\lambda$,
+będzie wyżej wprowadzoną bazą ortonormalną. Zatem
+\[
+\mathbb{C}^n = \bigoplus\limits_{\lambda\in{\rm spec}A}\bigoplus\limits_{i=1}^{m_\lambda}
+	\mathbb{C}v_{\lambda i} =
+\bigoplus\limits_{\lambda\in{\rm spec}A}V_\lambda
+\]
+Ta ostatnia równość wynika z~faktu, że wektory
+$\left\{v_{\lambda i}\right\}_{i=1}^{m_\lambda}$ rozpinają podprzestrzeń własną $V_\lambda$
+odpowiadającą wartości własnej $\lambda$. 
+
+Ortogonalność tej sumy zapewniona jest przez ortonormalność bazy.
+\end{proof}
 
 \end{document}
