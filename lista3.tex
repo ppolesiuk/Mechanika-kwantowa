@@ -40,6 +40,50 @@ z~definicji ortogonalnego dopełnienia.
 \item
 Istnieje baza ortonormalna złożona z wektorów własnych operatora $A$.
 
+\begin{proof}
+Przez indukcję po $n$.
+\begin{itemize}
+\item Dla $n=0$ zbiór pusty w~sposób trywialny jest bazą ortonormalną.
+\item Załóżmy, że teza twierdzenia zachodzi dla każdego operatora 
+hermitowskiego działającego nad~$\mathbb{C}^n$. 
+Weźmy operator $A\colon\mathbb{C}^{n+1}\to\mathbb{C}^{n+1}$.
+Jego wielomian charakterystyczny jest wielomianem stopnia $n+1$ nad
+ciałem liczb zespolonych, więc z~zasadniczego twierdzenia algebry
+operator $A$ ma conajmniej jedną wartość własną $\lambda$ oraz wektor 
+własny $w$. Oczywiście wektor ten można wybrać tak by $||w||=1$.
+
+Przestrzeń $\mathbb{C}^{n+1}$ można przedstawić jako
+\[
+\mathbb{C}^{n+1} = \mathbb{C}w \oplus \left(\mathbb{C}w\right)^\perp
+\]
+(gdzie zapis $\mathbb{C}w$ oznacza 
+$\left\{\alpha{}w | \alpha\in\mathbb{C}\right\}$), a~każdy wektor $v$
+przedstwić w~sposób jednoznaczny jako sumę $v=\alpha{}w+v'$, gdzie 
+$v'\in \left(\mathbb{C}w\right)^\perp$. Zauważmy jeszcze, że podprzestrzeń
+$\mathbb{C}w$ jest niezmiennicza (bo $w$ jest wektorem własnym), a~na
+mocy poprzednio udowodnionego twierdzenia, podprzestrzeń 
+$\left(\mathbb{C}w\right)^\perp$ również jest niezmiennicza.
+
+Rozważmy działanie operatora $A$ na dowolnym wektorze $v$:
+\[
+Av = A\left(\alpha{}w+v'\right) = A\left(\alpha{}w\right) + Av' = 
+\alpha\lambda{}w + A'v'
+\]
+gdzie operator $A'$ to operator $A$ obcięty do podprzestrzeni niezmienniczej
+$\left(\mathbb{C}w\right)^\perp$, a~zatem wartości $A'$ również są z~tego zbioru.
+
+Ale $\dim\left(\mathbb{C}w\right)^\perp = n$, czyli przestrzeń 
+$\left(\mathbb{C}w\right)^\perp$ jest izomorficzna z~przestrzenią $\mathbb{C}^n$,
+więc na mocy założenia indukcyjnego ma bazę ortonormalną $E$, złożoną z~wektorów
+własnych operatora $A'$, które również są wektorami własnymi operatora $A$.
+
+Wektor $w$ jest prostopadły do wszystkich wektorów 
+z~$\left(\mathbb{C}w\right)^\perp$, w~szczególności do wektorów z~$E$, więc układ
+$E\cup\left\{w\right\}$ tworzy bazę ortonormalną przestrzeni $\mathbb{C}^{n+1}$
+złożoną z~wektorów własnych operatora $A$.
+\end{itemize}
+\end{proof}
+
 \item
 Przestrzeń $\mathbb{C}^n$ jest ortogonalną sumą prostą podprzestrzeni własnych
 operatora $A$.
