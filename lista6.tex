@@ -1,0 +1,143 @@
+\documentclass{article}
+\usepackage[MeX]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{fullpage}
+
+\title{Rozwiązanie drugiego zadania z~szóstej listy z~Mechaniki Kwantowej}
+\author{BP PP RW RP}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+\item
+Na oscylatorze harmonicznym w~stanie podstawowym
+wykonano po kolei dwa pomiary -
+najpierw energii kinetycznej, a~następnie energii
+całkowitej. Zaniedbując czas pomiędzy pomiarami
+podać i~uzasadnić wzór na
+prawdopodobieństwo uzyskania
+w~wyniku drugiego pomiaru wartości
+$ E={7\over 2} \; \bar{}\!\!h \omega$ jeżeli w~wyniku
+pierwszego pomiaru uzyskano wynik w~przedziale
+$(0,{3\over 2}\;\bar{}\!\!h \omega)$.
+
+\paragraph{Rozwiązanie:}
+Energia kinetyczna zależy tylko od pędu, więc mamy
+\[
+E_k = \frac{p^2}{2m} < \frac{3}{2}\hbar\omega \mathrm{,}
+\]
+co jest równoważne stwierdzeniu
+\[
+p \in \left[-\sqrt{3\hbar\omega{}m}, \sqrt{3\hbar\omega{}m}\right] \mathrm{.}
+\]
+Zatem po pomiarze energii kinetycznej dla cząstki w~stanie $\psi$ jej nowy 
+stan będzie równy
+\[
+|\phi\rangle = \frac{|\phi_0\rangle}{\sqrt{\langle\phi_0|\phi_0\rangle}} \mathrm{,}
+\]
+gdzie
+\[
+|\phi_0\rangle = \int\limits_{-\sqrt{3\hbar\omega{}m}}^{\sqrt{3\hbar\omega{}m}}
+dp|p\rangle\langle{}p|\psi\rangle \mathrm{.}
+\]
+Zatem prawdopodobieństwo, że energia całkowita będzie równa 
+$\frac{7}{2}\hbar\omega$ wynosi $\langle\psi_3|\phi\rangle$,
+gdzie $\psi_3$ oznacza funkcję własną operatora energii odpowiadającą wartości
+własnej $\frac{7}{2}\hbar\omega$.
+
+\item Mierząc położenie cząstki kwantowej przy pomocy detektora idealnego 
+umieszczonego na odcinku
+$[a,b]$, otrzymano wynik negatywny. Podać wzór na funkcję falową
+cząstki (w~reprezentacji położeniowej) tuż po pomiarze, jeżeli tuż
+przed pomiarem jej stan opisany był unormowaną funkcją falową
+$\psi(x)$.
+
+\paragraph{Rozwiązanie:}
+Jeżeli detektor idealny nie zarejestrował cząstki na przedziale $[a,b]$, to
+funkcja falowa po obserwacji na tym przedziale powinna znikać. Jest to sytuacja 
+równoważna sytuacji w~której cząstkę zarejestrował drugi detektor idealny 
+badający istnienie cząstki na dopełnieniu przedziału $[a,b]$. Zatem, po 
+obserwacji układ będzie w~stanie:
+\[
+|\phi\rangle = \frac{|\phi_0\rangle}{\sqrt{\langle\phi_0|\phi_0\rangle}} 
+\mathrm{,} \quad \mathrm{gdzie} \quad
+|\phi_0\rangle = \int\limits_{-\infty}^a dx|x\rangle\langle{}x|\phi\rangle + 
+\int\limits_b^\infty dx|x\rangle\langle{}x|\phi\rangle \mathrm{.}
+\]
+Wiedząc, że funkcje własne operatora położenia wyrażają się przez deltę Diraca,
+otrzymujemy:
+\[
+\phi_0(x) = \int\limits_{-\infty}^a\delta(x-y)\psi(y)dy + 
+\int\limits_b^\infty\delta(x-y)\psi(y)dy = 
+\left\{\begin{array}{l l}
+	0 & x\in[a,b]\\
+	\psi(x) & x\notin [a,b]
+\end{array}\right.  \mathrm{.}
+\]
+Widać, że zgodnie z~naszymi intuicjami funkcja ta znika na przedziale $[a,b]$.
+
+\item
+Rozważmy dwa pomiary położenia cząstki, jeden na odcinku $[a_1,a_2]$, drugi na odcinku
+$[b_1,b_2]$. Zakładając pozytywny wynik obu pomiarów, zbadać czy kolejność ich wykonywania
+ma wpływ na stan końcowy układu. 
+
+\paragraph{Rozwiązanie:}
+Jak już zauważyliśmy, tuż po pozytywnym pomiarze położenia cząstki będącej w~stanie $\psi$
+na przedziale $[a,b]$, nowy stan ma postać:
+\[
+\phi(x) = \left\{\begin{array}{l l}
+	A\psi(x) & x \in [a,b] \\
+	0 & x \notin [a,b]
+\end{array}\right. \mathrm{,}
+\]
+gdzie $A$ to pewna rzeczywista dodatnia stała normująca.
+
+Zatem zaczynając od stanu $\psi$,po wykonaniu pierwszego pomiaru 
+na przedziale $[a_1,a_2]$ mamy stan
+\[
+\phi_1 = \left\{\begin{array}{l l}
+	A_1\psi(x) & x \in [a_1,a_2]\\
+	0 & x \notin [a_1,a_2]
+\end{array}\right. \mathrm{,}
+\]
+a~następnie po wykonaniu drugiego pomiaru na przedziale $[b_1,b_2]$ otrzymujemy stan
+\[
+\phi_2 = \left\{\begin{array}{l l}
+	B_1\phi_1(x) & x \in [b_1,b_2]\\
+	0 & x \notin [b_1,b_2]
+\end{array}\right. =
+\left\{\begin{array}{l l}
+	A_1B_1\psi(x) & x \in [a_1,a_2] \cap [b_1,b_2]\\
+	0 & x \notin [a_1,a_2] \cap [b_1,b_2]
+\end{array}\right. \mathrm{.}
+\]
+Wykonując te same pomiary, ale w~odwrotnej kolejności otrzymamy kolejno stany
+\[
+\phi_1' = \left\{\begin{array}{l l}
+	B_2\psi(x) & x \in [b_1,b_2]\\
+	0 & x \notin [b_1,b_2]
+\end{array}\right.
+\]
+\[
+\phi_2' = \left\{\begin{array}{l l}
+	A_2\phi_1'(x) & x \in [a_1,a_2]\\
+	0 & x \notin [a_1,a_2]
+\end{array}\right. =
+\left\{\begin{array}{l l}
+	A_2B_2\psi(x) & x \in [a_1,a_2] \cap [b_1,b_2]\\
+	0 & x \notin [a_1,a_2] \cap [b_1,b_2]
+\end{array}\right. \mathrm{.}
+\]
+
+Widać, że stałe $A_1B_1$ i $A_2B_2$ są rzeczywiste dodatnie, oraz normują
+tą samą funkcję, więc muszą być równe. Zatem stan końcowy nie zależy od kolejności
+pomiarów położenia.
+
+\end{enumerate}
+
+\end{document}
